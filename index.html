@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Parallax Website</title>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- font Awesome CDN Files -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- css normalize -->
+    <link rel="stylesheet" href="./css/normalize.css">
+
+    <!-- css styles -->
+    <link rel="stylesheet" href="./css/master.css">
+
+</head>
+
+<body>
+    <section class="home">
+        <header class="header">
+            <div class="container">
+                <div class="content">
+                    <div class="logo">
+                        <span>Logo</span>
+                        <i class="fa-solid fa-bars bars"></i>
+                    </div>
+                    <ul class="links handle-links">
+                        <li><a href="" class="active">Home</a><i class="fa-solid fa-xmark x-mark"></i></li>
+                        <li><a href="">About Us</a></li>
+                        <li><a href="">Services</a></li>
+                        <li><a href="">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+
+        <div class="parallax">
+            <img src="./assets/tree-left.png" id="tree-left" alt="">
+            <img src="./assets/tree-right.png" id="tree-right" alt="">
+            <h2 id="text">parallax Website</h2>
+            <img src="./assets/gate-left.png" id="gate-left" alt="">
+            <img src="./assets/gate-right.png" id="gate-right" alt="">
+            <img src="./assets/grass.png" id="grass" alt="">
+        </div>
+    </section>
+
+    <section class="description">
+        <div class="container">
+            <h2>Parallax Scrolling Website</h2>
+            <P>
+                It is a long established fact that a reader will be distracted by the readable
+                content of a page when looking at its layout. The point of using Lorem Ipsum is that it has
+                a more-or-less normal distribution of letters, as opposed to using 'Content here, content here',
+                making it look like readable English. Many desktop publishing packages and web page editors now use
+                Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites
+                still
+                It is a long established fact that a reader will be distracted by the readable
+                content of a page when looking at its layout. The point of using Lorem Ipsum is that it has
+                a more-or-less normal distribution of letters, as opposed to using 'Content here, content here',
+                making it look like readable English. Many desktop publishing packages and web page editors now use
+                Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites
+                still
+            </P>
+            <p>
+                in their infancy. Various versions have evolved over the years,
+                sometimes by accident, sometimes on purpose (injected humour and the like).
+                There are many variations of passages of Lorem Ipsum available, but the majority have suffered
+                alteration in some form,
+                by injected humour, or randomised words which don't look even slightly believable.
+                If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing
+                hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined
+                chunks
+                in their infancy. Various versions have evolved over the years,
+                sometimes by accident, sometimes on purpose (injected humour and the like).
+                There are many variations of passages of Lorem Ipsum available, but the majority have suffered
+                alteration in some form,
+                by injected humour, or randomised words which don't look even slightly believable.
+                If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing
+                hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined
+                chunks
+            </p>
+            <p>
+                as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200
+                Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks
+                reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour,
+                or non-characteristic words etc.
+                as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200
+                Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks
+                reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour,
+                or non-characteristic words etc.
+                as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200
+                Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks
+                reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour,
+                or non-characteristic words etc.
+                as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200
+                Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks
+                reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour,
+                or non-characteristic words etc.
+            </p>
+        </div>
+    </section>
+
+
+    <script>
+        /* Control Links by clicking on bars and x-mark icons*/
+        document.querySelector(".header .logo i").onclick = () => {
+            document.querySelector(".header .links").classList.toggle("handle-links");
+        }
+        document.querySelector(".header .links li:first-of-type i").onclick = () => {
+            document.querySelector(".header .links").classList.add("handle-links");
+        }
+
+        /* Handle Parallax */
+        let text = document.getElementById("text");
+        let treeLeft = document.getElementById("tree-left");
+        let treeRight = document.getElementById("tree-right");
+        let gateLeft = document.getElementById("gate-left");
+        let gateRight = document.getElementById("gate-right");
+
+
+        window.addEventListener('scroll', () => {
+            let value = window.scrollY;
+
+            text.style.marginTop = value * 2.5 + 'px';
+
+            treeLeft.style.top = value * -.5 + 'px';
+            treeLeft.style.left = value * -.5 + 'px';
+            treeRight.style.top = value * -1 + 'px';
+            treeRight.style.left = value * 1 + 'px';
+
+            gateLeft.style.marginLeft = value * .75 + 'px';
+            gateRight.style.marginRight = value * .75 + 'px';
+            gateLeft.style.marginTop = value * 1 + 'px';
+            gateRight.style.marginTop = value * 1 + 'px';
+        });
+    </script>
+</body>
+
+</html>
